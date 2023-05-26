@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "hasnol-api",
+      "image": "hasnolm7/hasnol-api:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "value": "jdbc:postgresql://awseb-e-vmxnetcbah-stack-awsebrdsdatabase-xs4ijd2trwuf.cxzol3sgnxfd.ap-southeast-1.rds.amazonaws.com:5432/customer"
+        }
+      ]
+    }
+  ]
+}
